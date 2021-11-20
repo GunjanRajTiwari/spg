@@ -1,0 +1,28 @@
+body {
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.land {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+}
+
+.bin {
+	position: absolute;
+	width: 12%;
+	left: 0;
+	bottom: 2em;
+	z-index: 2;
+}
+
+.info {
+	position: absolute;
+	top: 1em;
+	right: 1em;
+}
