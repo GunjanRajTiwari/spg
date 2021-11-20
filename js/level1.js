@@ -13,7 +13,6 @@ document.addEventListener("keydown", event => {
 		binPos += 10;
 		bin.style.left = `${binPos}px`;
 	}
-	console.log(binPos, window.innerWidth);
 });
 
 // Random generator
@@ -23,6 +22,7 @@ function random() {
 
 const timeCard = document.getElementById("time");
 const scoreCard = document.getElementById("score");
+const tung = new Audio("../audios/tung.mp3");
 
 function play() {
 	time = 59;
@@ -47,10 +47,23 @@ function play() {
 function rain(waste) {
 	const down = setInterval(() => {
 		waste.style.top = (waste.offsetTop += 2) + "px";
+		var currentHeight = waste.offsetTop + 50;
+		console.log(currentHeight, window.innerHeight);
+		if (
+			currentHeight > window.innerHeight - 50 &&
+			waste.offsetLeft > bin.offsetLeft &&
+			waste.offsetLeft + 50 < bin.offsetLeft + 100
+		) {
+			clearInterval(down);
+			container.removeChild(waste);
+			score += 5;
+			tung.play();
+			scoreCard.innerText = score > 9 ? score : "0" + score;
+		}
 		if (waste.offsetTop > window.innerHeight - 50) {
 			clearInterval(down);
 		}
-	}, 10);
+	}, 8);
 }
 
-// play();
+play();
