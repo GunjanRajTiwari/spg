@@ -108,3 +108,16 @@ body {
 .card a {
 	margin: auto;
 }
+
+/* footer  */
+footer {
+	height: 80px;
+	background-color: #f27676;
+	color: white;
+	padding: 1em;
+}
+
+footer p {
+	font-size: 0.8rem;
+	text-align: center;
+}
