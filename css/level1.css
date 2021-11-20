@@ -4,6 +4,7 @@ body {
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
+	font-family: "Sora", sans-serif;
 }
 
 .land {
@@ -11,11 +12,19 @@ body {
 	width: 100%;
 	left: 0;
 	bottom: 0;
+	overflow: hidden;
+}
+
+.container {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	background-color: #e2effa;
 }
 
 .bin {
 	position: absolute;
-	width: 12%;
+	width: 100px;
 	left: 0;
 	bottom: 2em;
 	z-index: 2;
@@ -25,4 +34,15 @@ body {
 	position: absolute;
 	top: 1em;
 	right: 1em;
+	padding: 1em;
+	background-color: #f27676;
+	color: white;
+	border-radius: 20px;
+	width: 100px;
+}
+
+.waste {
+	width: 50px;
+	position: absolute;
+	top: 0;
 }
