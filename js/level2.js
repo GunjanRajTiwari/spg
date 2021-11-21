@@ -10,8 +10,9 @@ fetch("../items.json")
             waste.innerText = item.name;
             itemContainer.appendChild(waste);
             dragElement(waste, item.type);
-        });
-    });
+        })
+    })
+
 
 const bin1 = document.getElementById("bin1");
 const bin2 = document.getElementById("bin2");
@@ -84,15 +85,32 @@ function dragElement(elmnt, type) {
             score += 5;
             scoreCard.innerText = score > 9 ? score : "0" + score;
             elmnt.remove();
+            if (score >= 50) {
+                gameOver(score);
+            }
         }
     }
 
+    function gameOver(score) {
+        document.getElementById("body").innerHTML = `
+
+				<div style="background-color: white; height: 100%; display: flex">
+				<div style="width: 10%;"></div>
+				<div>
+				<img src="../images/loading.gif" alt="Loading ..." style="height: 150px; width: 240px;" />
+				<h1>Game Over</h1>
+				<p>
+				Final Score : ${score}
+				</p>
+				<button onclick="window.location.href=''" id="play-btn" class="button">Play Again</button>
+				</div>
+				</div>
+				
+				`;
+    }
+
     function changeDesc(type) {
-        // alert(`This is type ${type} waste.`);
         document.getElementById("description").innerHTML = `<p style='color:yellow;'>This is type ${type} waste.</p>`;
-        setTimeout(() => {
-            document.getElementById("description").innerHTML = "Put the waste in the correct bin";
-        }, 2000);
 
     }
 }
