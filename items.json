@@ -1,18 +1,42 @@
-[
-	{
-		"name": "waste food",
-		"type": 1
-	},
-	{
-		"name": "paper",
-		"type": 2
-	},
-	{
-		"name": "plastic",
-		"type": 3
-	},
-	{
-		"name": "metal",
-		"type": 2
-	}
+[{
+        "name": "Waste Food",
+        "type": 1
+    },
+    {
+        "name": "Paper",
+        "type": 2
+    },
+    {
+        "name": "Metal",
+        "type": 2
+    },
+    {
+        "name": "Drinking Glasses",
+        "type": 3
+    },
+    {
+        "name": "Textiles",
+        "type": 2
+    },
+
+    {
+        "name": "Banana Peel",
+        "type": 1
+    },
+    {
+        "name": "Medical wastes",
+        "type": 3
+    },
+    {
+        "name": "Animal Dung",
+        "type": 1
+    },
+    {
+        "name": "Plastic",
+        "type": 2
+    },
+    {
+        "name": "Ceramics",
+        "type": 3
+    }
 ]
