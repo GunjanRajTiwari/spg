@@ -1,0 +1,68 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Sora, sans-serif;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em 2em;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.brand {
+	font-family: Oswald;
+	font-size: 1.5rem;
+	font-weight: 600;
+	letter-spacing: 1.5px;
+}
+
+.button {
+	text-decoration: none;
+	color: white;
+	background-color: #f27676;
+	padding: 1em 2em;
+	font-size: 0.8rem;
+	border-radius: 50px;
+}
+
+main {
+	width: 80%;
+	margin: 4em auto;
+	max-width: 968px;
+	min-width: 260px;
+}
+
+.title {
+	text-align: center;
+}
+
+.banner {
+	width: 100%;
+}
+
+.levels {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin: 2em;
+}
+
+main h2 {
+	margin-top: 2em;
+}
+
+/* footer  */
+footer {
+	height: 80px;
+	background-color: #f27676;
+	color: white;
+	padding: 1em;
+}
+
+footer p {
+	font-size: 0.8rem;
+	text-align: center;
+}
