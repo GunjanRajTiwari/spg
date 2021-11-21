@@ -1,4 +1,6 @@
 const itemContainer = document.getElementById("item-container");
+const trash = new Audio("../audios/trash.mp3");
+
 fetch("../items.json")
     .then(res => res.json())
     .then(items => {
@@ -77,6 +79,7 @@ function dragElement(elmnt, type) {
             left <=
             correctBin.offsetLeft + correctBin.offsetWidth - elmnt.offsetWidth / 2
         ) {
+            trash.play();
             changeDesc(type);
             score += 5;
             scoreCard.innerText = score > 9 ? score : "0" + score;
