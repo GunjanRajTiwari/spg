@@ -65,6 +65,7 @@ const timeCard = document.getElementById("time");
 const scoreCard1 = document.getElementById("score1");
 const scoreCard2 = document.getElementById("score2");
 const tung = new Audio("../audios/tung.mp3");
+const success = new Audio("../audios/success.wav");
 const splash = document.getElementById("splash");
 const popup = document.getElementById("popup");
 const playBtn = document.getElementById("play-btn");
@@ -98,6 +99,7 @@ function play() {
             <button id="play-btn" class="button">Play Again</button>
             `;
 			document.getElementById("play-btn").onclick = playgame;
+			success.play();
 		}
 	}, 1000);
 }
@@ -121,7 +123,7 @@ function judge(waste) {
 		if (collisionDetection(player1, waste)) {
 			tung.play();
 			container.removeChild(waste);
-			score1 += 5;
+			score1 += 2;
 			scoreCard1.innerText = score1 > 9 ? score1 : "0" + score1;
 			clearInterval(check);
 			return;
@@ -129,7 +131,7 @@ function judge(waste) {
 		if (collisionDetection(player2, waste)) {
 			tung.play();
 			container.removeChild(waste);
-			score2 += 5;
+			score2 += 2;
 			scoreCard2.innerText = score2 > 9 ? score2 : "0" + score2;
 			clearInterval(check);
 			return;
