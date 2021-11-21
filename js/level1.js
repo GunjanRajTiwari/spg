@@ -23,13 +23,17 @@ function random() {
 const timeCard = document.getElementById("time");
 const scoreCard = document.getElementById("score");
 const tung = new Audio("../audios/tung.mp3");
+const splash = document.getElementById("splash");
+const popup = document.getElementById("popup");
+const playBtn = document.getElementById("play-btn");
 
 function play() {
 	time = 59;
 	score = 0;
+	scoreCard.innerText = score > 9 ? score : "0" + score;
 	var timer = setInterval(() => {
-		timeCard.innerText = time;
-		if (time % 5 == 4) {
+		timeCard.innerText = time > 9 ? time : "0" + time;
+		if (time % 3 == 0) {
 			var waste = document.createElement("img");
 			waste.src = "../images/bag.png";
 			waste.classList.add("waste");
@@ -40,6 +44,15 @@ function play() {
 		time -= 1;
 		if (time < 0) {
 			clearInterval(timer);
+			splash.style.display = "flex";
+			popup.innerHTML = `
+            <h1>Game Over</h1>
+            <p>
+            Final Score : ${score}
+            </p>
+            <button id="play-btn" class="button">Play Again</button>
+            `;
+			document.getElementById("play-btn").onclick = playgame;
 		}
 	}, 1000);
 }
@@ -48,7 +61,6 @@ function rain(waste) {
 	const down = setInterval(() => {
 		waste.style.top = (waste.offsetTop += 2) + "px";
 		var currentHeight = waste.offsetTop + 50;
-		console.log(currentHeight, window.innerHeight);
 		if (
 			currentHeight > window.innerHeight - 50 &&
 			waste.offsetLeft > bin.offsetLeft &&
@@ -66,4 +78,9 @@ function rain(waste) {
 	}, 8);
 }
 
-play();
+const playgame = () => {
+	splash.style.display = "none";
+	play();
+};
+
+playBtn.onclick = playgame;
