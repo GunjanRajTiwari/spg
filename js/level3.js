@@ -90,19 +90,25 @@ function play() {
 		time -= 1;
 		if (time < 0) {
 			clearInterval(timer);
-			splash.style.display = "flex";
-			popup.innerHTML = `
-            <h1>Game Over</h1>
-            <p>
-            Player1 : ${score1} - ${score2} : Player2
-            </p>
-            <div> 
-            	<button id="play-btn" class="button">Play Again</button>
-				<button onclick="window.location.href='../waste.html'" id="play-btn" class="button">Go Back</button>
-            </div>
-            `;
-			document.getElementById("play-btn").onclick = playgame;
-			success.play();
+			fetch("../facts.json")
+				.then(res => res.json())
+				.then(facts => {
+					var idx = Math.floor(Math.random() * facts.length);
+					splash.style.display = "flex";
+					popup.innerHTML = `
+					<h1>Game Over</h1>
+					<p>
+					Player1 : ${score1} - ${score2} : Player2
+					</p>
+                    <p style="text-align:center;"> Did you know?😮 <br> ${facts[idx]}</p>
+					<div> 
+						<button id="play-btn" class="button">Play Again</button>
+						<button onclick="window.location.href='../waste.html'" id="play-btn" class="button">Go Back</button>
+					</div>
+					`;
+					document.getElementById("play-btn").onclick = playgame;
+					success.play();
+				});
 		}
 	}, 1000);
 }

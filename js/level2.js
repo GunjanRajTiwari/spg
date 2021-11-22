@@ -113,23 +113,30 @@ function dragElement(elmnt, type) {
 	}
 
 	function gameOver(score) {
-		document.getElementById("body").innerHTML = `
 
-				<div class="splash">
+		fetch("../facts.json")
+				.then(res => res.json())
+				.then(facts => {
+					var idx = Math.floor(Math.random() * facts.length);
+					// splash.style.display = "flex";
+					document.body.innerHTML = `
+                    <div class="splash" style="display:flex;">
 				<img src="../images/loading.gif" alt="Loading ..."/>
 				<div class="popup">
 				<h1>Game Over</h1>
 				<p>
 				Final Score : ${score}
 				</p>
+				<p style="text-align:center;"> Did you know?😮 <br> ${facts[idx]}</p>
 				<div>
 					<button onclick="window.location.href=''" id="play-btn" class="button">Play Again</button>
 					<button onclick="window.location.href='../waste.html'" id="play-btn" class="button">Go Back</button>
 				</div>
 				</div>
 				</div>
-				
 				`;
+				});
+
 	}
 
 	function changeDesc(win, name, type) {
