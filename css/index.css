@@ -6,6 +6,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: Sora, sans-serif;
+	width: 100vw;
 }
 
 .button {
@@ -56,6 +57,36 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	margin: -0.5em 1em -0.5em 1em;
+}
+
+/* About Section  */
+.about {
+	width: 80%;
+	min-width: 260px;
+	max-width: 1024px;
+	margin: 2em auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.desc,
+.image {
+	width: 40%;
+	min-width: 200px;
+	max-width: 300px;
+	margin: auto;
+	padding: 1em;
+}
+
+.about p {
+	color: #5c5b5b;
+	font-size: 0.9rem;
+}
+
+.image img {
+	width: 100%;
 }
 
 /* Explore Section  */
