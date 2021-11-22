@@ -57,7 +57,7 @@ function play() {
                     <p>
                     Final Score : ${score}
                     </p>
-                    <p> Did you know? \n ${facts[idx]}
+                    <p style="text-align:center;"> Did you know?😮 <br> ${facts[idx]}</p>
                     <div>
                         <button id="play-btn" class="button">Play Again</button>
                         <button onclick="window.location.href='../waste.html'" id="play-btn" class="button">Go Back</button>

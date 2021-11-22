@@ -109,7 +109,6 @@ body {
 }
 
 .splash {
-<<<<<<< HEAD
     position: fixed;
     height: 100vh;
     width: 100vw;
@@ -138,14 +137,6 @@ body {
     width: 20%;
     min-width: 200px;
     max-width: 500px;
-=======
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
->>>>>>> 085415578ccf8b4a6198a0751cef37ca23462d59
 }
 
 .button {
@@ -154,13 +145,7 @@ body {
     background-color: #f27676;
     padding: 1em 2em;
     font-size: 0.8rem;
-<<<<<<< HEAD
     border-radius: 50px;
     border: none;
     font-family: Sora, sans-serif;
 }
-=======
-    border: none;
-    border-radius: 50px;
-}
->>>>>>> 085415578ccf8b4a6198a0751cef37ca23462d59
