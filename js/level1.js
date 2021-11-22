@@ -50,7 +50,10 @@ function play() {
             <p>
             Final Score : ${score}
             </p>
-            <button id="play-btn" class="button">Play Again</button>
+            <div>
+                <button id="play-btn" class="button">Play Again</button>
+                <button onclick="window.location.href='../waste.html'" id="play-btn" class="button">Go Back</button>
+            </div>
             `;
             document.getElementById("play-btn").onclick = playgame;
         }

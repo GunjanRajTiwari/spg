@@ -116,14 +116,16 @@ function dragElement(elmnt, type) {
 		document.getElementById("body").innerHTML = `
 
 				<div class="splash">
-				<div style="width: 10%;"></div>
-				<div>
-				<img src="../images/loading.gif" alt="Loading ..." style="height: 150px; width: 240px;" />
+				<img src="../images/loading.gif" alt="Loading ..."/>
+				<div class="popup">
 				<h1>Game Over</h1>
 				<p>
 				Final Score : ${score}
 				</p>
-				<button onclick="window.location.href=''" id="play-btn" class="button">Play Again</button>
+				<div>
+					<button onclick="window.location.href=''" id="play-btn" class="button">Play Again</button>
+					<button onclick="window.location.href='../waste.html'" id="play-btn" class="button">Go Back</button>
+				</div>
 				</div>
 				</div>
 				
