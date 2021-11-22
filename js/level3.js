@@ -96,7 +96,10 @@ function play() {
             <p>
             Player1 : ${score1} - ${score2} : Player2
             </p>
-            <button id="play-btn" class="button">Play Again</button>
+            <div> 
+            	<button id="play-btn" class="button">Play Again</button>
+				<button onclick="window.location.href='../waste.html'" id="play-btn" class="button">Go Back</button>
+            </div>
             `;
 			document.getElementById("play-btn").onclick = playgame;
 			success.play();
